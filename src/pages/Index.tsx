@@ -1,14 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import MainAppLayout from '../components/layout/MainAppLayout';
+import ActivityCardGrid from '../components/Activities/ActivityCardGrid';
 
-const Index = () => {
+/**
+ * Renders the main Activities Overview page for BookMyShow.
+ *
+ * This page component orchestrates the overall layout by composing several
+ * larger "organism" level components. It leverages the `MainAppLayout` to
+ * provide the consistent application shell, including the header and sidebar.
+ *
+ * The main content of the page, the grid of activity cards, is provided by
+ * the `ActivityCardGrid` component. This compositional approach keeps the page
+ * component clean and focused on layout, while delegating content and
+ * specific functionalities to the child components.
+ */
+const ActivitiesPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <MainAppLayout>
+      <ActivityCardGrid />
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default ActivitiesPage;
